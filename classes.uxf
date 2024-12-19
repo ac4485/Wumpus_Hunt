@@ -1,0 +1,151 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><help_text>Space for diagram notes
+</help_text><element><id>UMLClass</id><coordinates><x>187</x><y>193</y><w>252</w><h>120</h></coordinates><panel_attributes>/menu/
+--
+--
+#Operation(): int
+/+menu_describe() : void/
+/+menu_loop() : void/
+/+menu_opts(const std::string &amp;s): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>139</x><y>337</y><w>276</w><h>144</h></coordinates><panel_attributes>main_menu
+--
+--gm1: game_menu
+
+--
++menu_describe() : void
++menu_loop() : void
++menu_opts(const std::string &amp;s): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>151</x><y>577</y><w>276</w><h>168</h></coordinates><panel_attributes>game_menu
+--
+--g1: player
+--m: map
+
+--
++menu_describe() : void
++menu_loop() : void
++menu_opts(const std::string &amp;s): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>259</x><y>301</y><w>36</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>415</x><y>301</y><w>36</w><h>300</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>271</x><y>469</y><w>48</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>463</x><y>541</y><w>252</w><h>348</h></coordinates><panel_attributes>map
+--
+-g1: player
+-m: map
+-col_num:int
+-row_num:int
+-xx:int
+-yy:int
+-monster_num:int
+--
++import_map(std::string&amp; s): void;
++map_generator(): void;
++print_map() const: void;
++go_s(gg: player): void;
++go_n(gg: player): void;
++go_e(gg: player): void;
++go_w(gg: player): void;
++get_monster_num():int
++monster_dies():void
++all_monster_died():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>451</x><y>265</y><w>216</w><h>228</h></coordinates><panel_attributes>player
+--
+-w: weapon
+
+--
++set_weapon(weapon* w): void;
++get_weapon()const: weapon*;
++print_status() const: void;
++is_dead() const: bool;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>415</x><y>481</y><w>108</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;120;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>415</x><y>637</y><w>72</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>703</x><y>181</y><w>252</w><h>120</h></coordinates><panel_attributes>event#
+--
+--
++show_on_map(): void;
++can_go(): bool;
++interation(player* p) : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>763</x><y>517</y><w>192</w><h>72</h></coordinates><panel_attributes>item
+--
+--
+/+benefit_player(p:player):void;/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>391</x><y>13</y><w>252</w><h>168</h></coordinates><panel_attributes>alive
+--
+# name::string
+#hp: int
+--
++is_dead(): bool
++get_hit(ap:int):void
++attack(a: alive):void;
++take_medicine(int cure):void;
++get_name() string;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>991</x><y>529</y><w>216</w><h>84</h></coordinates><panel_attributes>medicine
+--
+-hp: int
+--
++benefit_player(p:player):void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>751</x><y>625</y><w>216</w><h>156</h></coordinates><panel_attributes>weapon
+--
+# attack_point:int
+--
+/+ get_weapon_type(): string/
++benefit_player(p:player):void;
++attack(alive): void
++get_ap(w: weapon):int
++weapon_status():void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1003</x><y>625</y><w>252</w><h>84</h></coordinates><panel_attributes>melee
+--
+--
+# reachable(me: melee):bool
+# reachable(lr: long_range):bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>991</x><y>721</y><w>228</w><h>84</h></coordinates><panel_attributes>long_range
+--
+--
+# reachable(me: melee):bool
+# reachable(lr: long_range):bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>955</x><y>649</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>955</x><y>721</y><w>60</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;30;10</additional_attributes></element><element><id>Relation</id><coordinates><x>943</x><y>553</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1279</x><y>625</y><w>60</w><h>48</h></coordinates><panel_attributes>sword
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1267</x><y>769</y><w>60</w><h>48</h></coordinates><panel_attributes>magic
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1243</x><y>637</y><w>60</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;30;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1207</x><y>733</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>823</x><y>577</y><w>36</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>679</x><y>25</y><w>204</w><h>120</h></coordinates><panel_attributes>monster
+--
++ w: weapon
++ ma: map
+--
++can_go(): bool;
++interation(player* p) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>739</x><y>337</y><w>240</w><h>144</h></coordinates><panel_attributes>treasure
+--
+# it: item
+# is_picked:bool
+--
++can_go(): bool;
++interation(player* p) : void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1015</x><y>445</y><w>168</w><h>72</h></coordinates><panel_attributes>arrow_treasure=
+--
+--
++show_on_map(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1195</x><y>409</y><w>168</w><h>84</h></coordinates><panel_attributes>medicine_treasure^
+--
+--
++show_on_map(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1015</x><y>349</y><w>168</w><h>72</h></coordinates><panel_attributes>sword_treasure-
+--
+--
++show_on_map(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>967</x><y>373</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>967</x><y>421</y><w>252</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>967</x><y>445</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>931</x><y>25</y><w>168</w><h>72</h></coordinates><panel_attributes>goblin$
+--
+--
++show_on_map(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>631</x><y>61</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>523</x><y>169</y><w>36</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>823</x><y>133</y><w>36</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1207</x><y>85</y><w>168</w><h>72</h></coordinates><panel_attributes>lakshmikanta~
+--
+--
++show_on_map(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>871</x><y>49</y><w>84</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>871</x><y>97</y><w>360</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>859</x><y>289</y><w>36</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>991</x><y>121</y><w>204</w><h>96</h></coordinates><panel_attributes>hazard@
+--
+--
++show_on_map(): void;
++can_go(): bool;
++interation(player* p) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>991</x><y>241</y><w>168</w><h>84</h></coordinates><panel_attributes>wall!
+--
+--
++show_on_map(): void;
++can_go(): bool;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>943</x><y>193</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>943</x><y>253</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>703</x><y>289</y><w>60</w><h>276</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes><additional_attributes>10;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1171</x><y>409</y><w>132</w><h>240</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;90;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1159</x><y>505</y><w>144</w><h>240</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;100;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1183</x><y>481</y><w>48</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>655</x><y>445</y><w>132</w><h>204</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;90;150</additional_attributes></element><element><id>Relation</id><coordinates><x>871</x><y>133</y><w>48</w><h>516</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;10;410</additional_attributes></element><element><id>Relation</id><coordinates><x>667</x><y>133</y><w>60</w><h>432</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1..n</panel_attributes><additional_attributes>10;10;10;340</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1231</x><y>505</y><w>60</w><h>48</h></coordinates><panel_attributes>craw
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1243</x><y>541</y><w>36</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1255</x><y>721</y><w>60</w><h>36</h></coordinates><panel_attributes>arrow
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1087</x><y>61</y><w>216</w><h>468</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;160;370</additional_attributes></element><element><id>Relation</id><coordinates><x>1303</x><y>145</y><w>48</w><h>648</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;10;520</additional_attributes></element><element><id>Relation</id><coordinates><x>1207</x><y>781</y><w>84</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element></diagram>
